@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guia de Carreira Digital com IA 2025–2026 | Sutari Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0E1C30;
+    --blue: #1A3E6B;
+    --mid-blue: #2E6DB4;
+    --amber: #F0A500;
+    --amber-light: #FFF3D0;
+    --cream: #F9F6F0;
+    --text: #1C1C1C;
+    --muted: #6B7280;
+    --border: #E5E0D8;
+    --white: #FFFFFF;
+    --green: #1A7A4A;
+    --red: #C0392B;
+    --card-bg: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(14,28,48,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--amber); }
+  .nav-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--amber);
+    border: 1px solid var(--amber);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(46,109,180,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(240,165,0,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* grid lines */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    color: var(--amber);
+    border: 1px solid rgba(240,165,0,0.35);
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--amber);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,0.6);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    animation: fadeUp 0.8s 0.3s ease both;
+    line-height: 1.6;
+  }
+
+  /* ─── GATE FORM ─── */
+  #gate-form {
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .form-row {
+    display: flex; gap: 10px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+  }
+  .form-row input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.07);
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-row input:focus { border-color: var(--amber); }
+  .form-row input.error { border-color: #E74C3C; }
+
+  .btn-primary {
+    background: var(--amber);
+    color: #0E1C30;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary:hover {
+    background: #FFB800;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(240,165,0,0.3);
+  }
+
+  .form-microcopy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+  }
+
+  .hero-stats {
+    display: flex; gap: 32px; justify-content: center;
+    margin-top: 56px;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    align-self: stretch;
+  }
+
+  /* ─── GUIDE CONTENT ─── */
+  #guide-content { display: block; }
+
+  /* ─── SUCCESS BANNER ─── */
+  #success-banner {
+    display: none;
+    background: linear-gradient(135deg, var(--green), #145C38);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  #success-banner span { opacity: 0.75; font-weight: 400; font-size: 13px; margin-left: 8px; }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    padding: 80px 24px;
+  }
+  .section-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    color: var(--mid-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--amber);
+    display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--navy);
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+    max-width: 680px;
+  }
+
+  /* ─── DIAGNOSIS ─── */
+  .diagnosis-bg {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .diagnosis-bg .section-title { color: var(--white); }
+  .diagnosis-bg .section-label { color: rgba(255,255,255,0.4); }
+  .diagnosis-bg .section-body { color: rgba(255,255,255,0.65); }
+
+  .paralysis-box {
+    background: rgba(240,165,0,0.1);
+    border: 1px solid rgba(240,165,0,0.3);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 36px 0;
+    text-align: center;
+  }
+  .paralysis-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--amber);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .paralysis-box p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+  }
+
+  .symptoms {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-top: 36px;
+  }
+  .symptom-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .symptom-card::before {
+    content: attr(data-num);
+    position: absolute; top: 16px; right: 16px;
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(240,165,0,0.08);
+    line-height: 1;
+  }
+  .symptom-card h4 {
+    font-size: 15px; font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .symptom-card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ─── MARKET DATA ─── */
+  .market-bg { background: var(--white); }
+
+  .comparison-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    margin: 36px 0;
+  }
+  .compare-col {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .compare-header {
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .compare-header.red { background: var(--red); color: white; }
+  .compare-header.green { background: var(--green); color: white; }
+  .compare-items {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+  }
+  .compare-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #444;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-item:last-child { border-bottom: none; }
+  .compare-item .ico { font-size: 16px; flex-shrink: 0; }
+
+  .market-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 36px;
+    font-size: 14px;
+  }
+  .market-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .market-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    color: #333;
+  }
+  .market-table tr:nth-child(even) td { background: #F8F6F2; }
+  .market-table .badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px;
+  }
+  .badge-high { background: #D4EDDA; color: var(--green); }
+  .badge-vhigh { background: #C8F5E2; color: #0B5E37; }
+  .growth { color: var(--green); font-weight: 700; }
+
+  /* ─── PATHS ─── */
+  .paths-bg { background: var(--cream); }
+
+  .path-tabs {
+    display: flex; gap: 4px;
+    background: rgba(14,28,48,0.06);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 32px;
+  }
+  .path-tab {
+    flex: 1; text-align: center;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .path-tab.active {
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(14,28,48,0.25);
+  }
+
+  .path-panel { display: none; }
+  .path-panel.active { display: block; }
+
+  .path-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .path-card-header {
+    background: var(--navy);
+    padding: 28px 32px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+  .path-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .path-card-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+  .path-ticket {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .path-ticket-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+  }
+  .path-ticket-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1.2;
+  }
+
+  .path-card-body { padding: 28px 32px; }
+
+  .path-why {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    color: #5C4500;
+    line-height: 1.7;
+  }
+  .path-why strong { color: #3A2C00; }
+
+  .path-learn h4 {
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .learn-items {
+    display: flex; flex-direction: column; gap: 8px;
+    margin-bottom: 28px;
+  }
+  .learn-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: #333;
+    padding: 10px 14px;
+    background: #F9F6F0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .learn-item strong { color: var(--navy); }
+  .learn-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber); flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* plan table */
+  .plan-title {
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .plan-rows { display: flex; flex-direction: column; gap: 8px; }
+  .plan-row {
+    display: grid;
+    grid-template-columns: 72px 1fr 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #F9F6F0;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    align-items: start;
+  }
+  .plan-month {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .plan-month-sub {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .plan-action { color: #333; line-height: 1.6; }
+  .plan-result { color: var(--green); line-height: 1.6; font-size: 12px; }
+
+  /* ─── RULE OF 6 ─── */
+  .rule-bg { background: var(--navy); }
+  .rule-bg .section-title { color: white; }
+  .rule-bg .section-label { color: rgba(255,255,255,0.35); }
+
+  .rule-steps { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+  .rule-step {
+    display: flex; gap: 24px; align-items: flex-start;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 24px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .rule-step:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(240,165,0,0.25);
+  }
+  .rule-step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--amber);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 52px;
+  }
+  .rule-step-content h4 {
+    font-size: 17px; font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .rule-step-content p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  /* ─── MESSAGES ─── */
+  .msg-bg { background: var(--white); }
+
+  .msg-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .msg-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.18s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .msg-tab.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+  }
+
+  .msg-panel { display: none; }
+  .msg-panel.active { display: block; }
+
+  .msg-intro {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .msg-bubble {
+    background: #ECF3FB;
+    border-radius: 4px 16px 16px 16px;
+    padding: 20px 24px;
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.75;
+    border-left: 3px solid var(--mid-blue);
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .copy-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600;
+    color: var(--mid-blue);
+    background: none;
+    border: 1.5px solid var(--mid-blue);
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .copy-btn:hover { background: var(--mid-blue); color: white; }
+  .copy-btn.copied { background: var(--green); border-color: var(--green); color: white; }
+
+  /* ─── CONCLUSION ─── */
+  .conclusion-bg {
+    background: linear-gradient(135deg, var(--navy) 0%, #1A3E6B 100%);
+    text-align: center;
+  }
+  .conclusion-bg .section-title { color: white; }
+  .conclusion-bg .section-label { color: rgba(255,255,255,0.35); }
+
+  .vs-block {
+    display: flex; gap: 16px; align-items: center; justify-content: center;
+    margin: 36px auto;
+    max-width: 640px;
+  }
+  .vs-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .vs-card.wrong {
+    background: rgba(192,57,43,0.15);
+    border: 1px solid rgba(192,57,43,0.3);
+    color: #F5A798;
+  }
+  .vs-card.right {
+    background: rgba(26,122,74,0.15);
+    border: 1px solid rgba(26,122,74,0.3);
+    color: #7EDBA6;
+  }
+  .vs-divider {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.25);
+    font-style: italic;
+  }
+
+  .conclusion-quote {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    letter-spacing: -0.5px;
+    font-style: italic;
+  }
+  .conclusion-quote span { color: var(--amber); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080F1A;
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.3px;
+  }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+  /* ─── MIRROR SECTION (intro após gate) ─── */
+  .mirror-bg {
+    background: #F0F4F8;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .wpp-context {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .wpp-context::before {
+    content: '';
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: #25D366;
+    border-radius: 50%;
+  }
+
+  .wpp-bubble-wrap {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+  }
+  .wpp-bubble {
+    background: #FFFFFF;
+    border-radius: 4px 16px 16px 16px;
+    padding: 18px 22px;
+    max-width: 680px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1a1a1a;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-left: 3px solid #25D366;
+    position: relative;
+  }
+  .wpp-bubble .wpp-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #25D366;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .wpp-bubble .wpp-time {
+    font-size: 11px;
+    color: #999;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .mirror-question {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .mirror-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  /* path-identifier cards */
+  .path-ident-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .path-ident-card {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .path-ident-card:hover {
+    border-color: var(--mid-blue);
+    box-shadow: 0 4px 16px rgba(46,109,180,0.12);
+  }
+  .path-ident-card.selected {
+    border-color: var(--mid-blue);
+    background: #EEF4FB;
+    box-shadow: 0 4px 20px rgba(46,109,180,0.15);
+  }
+  .path-ident-card .pic-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .path-ident-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .path-ident-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .path-ident-reveal {
+    display: none;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--mid-blue);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-top: 4px;
+    animation: slideIn 0.3s ease both;
+  }
+  .path-ident-reveal.show { display: block; }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .path-ident-reveal .pir-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mid-blue);
+    margin-bottom: 12px;
+  }
+  .path-ident-reveal .pir-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  .scroll-down-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    background: var(--navy);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .scroll-down-btn:hover {
+    background: var(--blue);
+    transform: translateY(-1px);
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 700px) {
+    nav { padding: 14px 20px; }
+    .symptoms { grid-template-columns: 1fr; }
+    .comparison-grid { grid-template-columns: 1fr; }
+    .path-card-header { flex-direction: column; }
+    .path-ticket { text-align: left; }
+    .plan-row { grid-template-columns: 56px 1fr; }
+    .plan-result { grid-column: 2; }
+    .vs-block { flex-direction: column; }
+    .form-row { flex-direction: column; }
+    .hero-stats { gap: 16px; }
+    nav { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sutari<span>.</span></div>
+  <div class="nav-badge">Guia Gratuito</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Pesquisa de Mercado Real · Baseado em Dados</div>
+
+    <h1>
+      Chega de<br/>
+      <em>ficar perdido</em><br/>
+      no digital.
+    </h1>
+
+    <p class="hero-sub">
+      Um guia honesto, sem promessa de dinheiro fácil, sobre como entrar no mercado digital com IA e construir algo real nos próximos 6 a 12 meses.
+    </p>
+
+    <button class="btn-primary" onclick="document.getElementById('guia-inicio').scrollIntoView({behavior:'smooth'})" style="margin-bottom:8px;">Acessar o Guia ↓</button>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>+109%</strong>
+        <span>Crescimento de vagas IA</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <strong>3</strong>
+        <span>Caminhos validados</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <strong>12 meses</strong>
+        <span>Para um negócio real</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- GUIDE CONTENT -->
+<div id="guide-content">
+
+  <!-- 0. MIRROR — A dúvida + identificação de caminho -->
+  <section class="section mirror-bg">
+    <div class="section-inner">
+
+      <div class="wpp-context">Mensagem recebida — essa dúvida é de muita gente</div>
+
+      <div class="wpp-bubble-wrap">
+        <div class="wpp-bubble">
+          <div class="wpp-name">Contato</div>
+          "Cara, eu quero ser do digital, quero ter meu próprio negócio, só que como tem diversas ferramentas, diversos nichos no marketing, diversas maneiras de você ganhar dinheiro no digital, eu estou totalmente perdido. Eu penso em abrir uma agência de marketing digital, mas muita gente fala que já está saturado. Eu penso em tentar criar agentes de IA pra abrir minha própria agência, mesmo só que eu fico perdido.
+          <br/><br/>
+          Tem algum nicho ou alguma especialidade ou alguma ferramenta ou algo que você acha que se eu me dedicar durante seis meses, um ano, eu consigo trabalhar com isso? É muita oportunidade, só que eu nem sei por onde começar, nem sei por onde estudar. Quando você fica perdido, você fica que nem um cego no tiroteio, é horrível."
+          <div class="wpp-time">áudio transcrito</div>
+        </div>
+      </div>
+
+      <h2 class="mirror-question reveal">Isso ressoa com você?</h2>
+      <p class="mirror-sub reveal">Antes de entrar no guia — leia as perspectivas abaixo e veja qual delas fala mais com o seu momento. Não é teste, não é quiz. É só pra você entrar no conteúdo já com uma direção na cabeça.</p>
+
+      <div class="path-ident-grid reveal">
+        <div class="path-ident-card" onclick="selectPath(0, this)">
+          <span class="pic-icon">🧭</span>
+          <h4>Estou perdido no geral</h4>
+          <p>Sei que quero o digital, mas não sei nem por onde começar a olhar.</p>
+        </div>
+        <div class="path-ident-card" onclick="selectPath(1, this)">
+          <span class="pic-icon">⚙️</span>
+          <h4>Me interessa tecnologia e processos</h4>
+          <p>Gosto de entender como sistemas funcionam e resolver problemas operacionais.</p>
+        </div>
+        <div class="path-ident-card" onclick="selectPath(2, this)">
+          <span class="pic-icon">💬</span>
+          <h4>Quero trabalhar com IA e atendimento</h4>
+          <p>A ideia de criar agentes de IA para empresas me faz sentido.</p>
+        </div>
+        <div class="path-ident-card" onclick="selectPath(3, this)">
+          <span class="pic-icon">📈</span>
+          <h4>Me identifico mais com marketing e vendas</h4>
+          <p>Gosto de entender o comportamento de compra e trazer clientes para negócios.</p>
+        </div>
+      </div>
+
+      <!-- Perspectivas reveladas ao clicar -->
+      <div class="path-ident-reveal" id="pir-0">
+        <div class="pir-label">Perspectiva geral — ponto de partida</div>
+        <div class="pir-text">
+          O mercado digital é barulhento e vende muita ilusão. A maioria dos caminhos populares já está saturado — agência genérica, afiliado, dropshipping. O que realmente está crescendo agora é resolver problemas reais de empresas usando tecnologia. Você não precisa escolher a oportunidade certa. Você precisa escolher <strong>uma</strong> e ir fundo. O guia abaixo apresenta três caminhos sólidos com demanda real e plano de ação mês a mês.
+        </div>
+      </div>
+
+      <div class="path-ident-reveal" id="pir-1">
+        <div class="pir-label">Perspectiva — Automação de Processos</div>
+        <div class="pir-text">
+          Esquece a ideia de agência genérica. O que dá retorno hoje é <strong>vender tempo e redução de custo para empresas</strong>. Quem aprende a automatizar processos com ferramentas como Make e n8n integrado a IA virou profissional escasso e bem pago. Ticket médio de R$ 2k a R$ 15k por projeto. Em 6 meses estudando sério você já consegue prestar serviço. O Caminho 1 do guia é o seu.
+        </div>
+      </div>
+
+      <div class="path-ident-reveal" id="pir-2">
+        <div class="pir-label">Perspectiva — Chatbots Inteligentes</div>
+        <div class="pir-text">
+          Aquele negócio de agente de IA que você pensou — vai nessa direção. Mas não são robôs de menu. São bots que <strong>leem o catálogo da empresa e atendem no WhatsApp 24h de forma natural</strong>. Clínicas e imobiliárias pagam bem por isso porque perdem venda todo dia por falta de resposta rápida. O Caminho 2 do guia detalha exatamente o que estudar e como chegar no primeiro cliente.
+        </div>
+      </div>
+
+      <div class="path-ident-reveal" id="pir-3">
+        <div class="pir-label">Perspectiva — Tráfego Pago Nichado</div>
+        <div class="pir-text">
+          Agência genérica está morta. Mas <strong>especialista em trazer cliente para um nicho específico</strong> — energia solar, clínica estética, dentista — cobra o triplo e entrega resultado. Com IA você produz os anúncios em 1/5 do tempo da concorrência. Essa é a borda competitiva real. O Caminho 3 do guia tem o roteiro de 6 meses direto ao ponto.
+        </div>
+      </div>
+
+      <div id="scroll-cta" style="display:none;">
+        <button class="scroll-down-btn" onclick="document.getElementById('guia-inicio').scrollIntoView({behavior:'smooth'})">
+          Entrar no guia completo ↓
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="guia-inicio"></div>
+
+  <!-- 1. DIAGNÓSTICO -->
+  <section class="section diagnosis-bg">
+    <div class="section-inner">
+      <div class="section-label reveal">Seção 01</div>
+      <h2 class="section-title reveal">Por que você está perdido?</h2>
+      <p class="section-body reveal">
+        Se você sente como se estivesse "cego em tiroteio" no mercado digital — bem-vindo ao clube. Esse sentimento tem um nome técnico, e não tem nada a ver com falta de capacidade.
+      </p>
+
+      <div class="paralysis-box reveal">
+        <h3>PARALISIA POR ANÁLISE</h3>
+        <p>Excesso de oportunidades + falta de direção = zero resultado</p>
+      </div>
+
+      <p class="section-body reveal" style="margin-bottom:36px;">
+        A internet cria a ilusão de que existem mil caminhos iguais, quando na prática <strong style="color:var(--amber)">90% deles não geram renda relevante ou sustentável.</strong> O problema não é falta de oportunidade — é o oposto.
+      </p>
+
+      <div class="symptoms">
+        <div class="symptom-card reveal" data-num="1">
+          <h4>Paralisia por análise</h4>
+          <p>Você fica pesquisando, assistindo vídeos, comparando opções — e nunca executa.</p>
+        </div>
+        <div class="symptom-card reveal" data-num="2" style="animation-delay:0.1s">
+          <h4>Troca constante de ideia</h4>
+          <p>Toda semana surge um nicho novo e você muda de direção antes de aprender o anterior.</p>
+        </div>
+        <div class="symptom-card reveal" data-num="3" style="animation-delay:0.2s">
+          <h4>Maratona de cursos</h4>
+          <p>Consome infinito conteúdo sem construir nada. Aprendizado sem prática não vira habilidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MERCADO -->
+  <section class="section market-bg">
+    <div class="section-inner">
+      <div class="section-label reveal">Seção 02</div>
+      <h2 class="section-title reveal">Pesquisa de Mercado 2025–2026</h2>
+      <p class="section-body reveal">Dados reais. Não achismos.</p>
+
+      <div class="comparison-grid reveal" style="margin-top:36px;">
+        <div class="compare-col">
+          <div class="compare-header red">🔴 Saturado / Margem Baixa</div>
+          <div class="compare-items">
+            <div class="compare-item"><span class="ico">❌</span> Agência de social media genérica</div>
+            <div class="compare-item"><span class="ico">❌</span> Dropshipping sem diferenciação</div>
+            <div class="compare-item"><span class="ico">❌</span> Marketing de afiliados genérico</div>
+            <div class="compare-item"><span class="ico">❌</span> Edição básica de vídeo</div>
+            <div class="compare-item"><span class="ico">❌</span> Copywriting genérico</div>
+            <div class="compare-item"><span class="ico">❌</span> Design de posts para Instagram</div>
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-header green">🟢 Crescimento / Alta Demanda</div>
+          <div class="compare-items">
+            <div class="compare-item"><span class="ico">✅</span> Automação de processos com IA</div>
+            <div class="compare-item"><span class="ico">✅</span> Chatbots inteligentes (WhatsApp)</div>
+            <div class="compare-item"><span class="ico">✅</span> Tráfego pago hiper-nichado + IA</div>
+            <div class="compare-item"><span class="ico">✅</span> Consultoria de transformação digital</div>
+            <div class="compare-item"><span class="ico">✅</span> Agentes de IA para empresas</div>
+            <div class="compare-item"><span class="ico">✅</span> Micro SaaS vertical com IA</div>
+          </div>
+        </div>
+      </div>
+
+      <table class="market-table reveal" style="margin-top:40px;">
+        <thead>
+          <tr>
+            <th>Habilidade / Nicho</th>
+            <th>Crescimento Anual</th>
+            <th>Demanda</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI Integration (Upwork)</td>
+            <td class="growth">+178%</td>
+            <td><span class="badge badge-vhigh">Muito Alta</span></td>
+          </tr>
+          <tr>
+            <td>AI Chatbot Development</td>
+            <td class="growth">+71%</td>
+            <td><span class="badge badge-high">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Prompt Engineering</td>
+            <td class="growth">+240%</td>
+            <td><span class="badge badge-vhigh">Muito Alta</span></td>
+          </tr>
+          <tr>
+            <td>Business Process Automation</td>
+            <td class="growth">Crescimento constante</td>
+            <td><span class="badge badge-high">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Consultor IA (freelance)</td>
+            <td class="growth">US$ 75–250/hora</td>
+            <td><span class="badge badge-vhigh">Muito Alta</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="path-why reveal" style="margin-top:28px; background:#FFF8E6; border-color:var(--amber);">
+        <strong>Contexto importante:</strong> Freelancers que se adaptaram cedo à IA ganham entre 40% e 60% a mais por hora do que antes. O trabalho relacionado a IA no Upwork cruzou US$ 300 milhões em valor anualizado até o final de 2025. <em>Fonte: Upwork In-Demand Skills Report 2026</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OS 3 CAMINHOS -->
+  <section class="section paths-bg">
+    <div class="section-inner">
+      <div class="section-label reveal">Seção 03</div>
+      <h2 class="section-title reveal">Os 3 Caminhos Sólidos</h2>
+      <p class="section-body reveal" style="margin-bottom:36px;">
+        Selecionados com base em: (1) demanda comprovada por empresas com orçamento, (2) escassez de profissionais qualificados, (3) possibilidade real de domínio em até 12 meses.
+      </p>
+
+      <!-- TABS -->
+      <div class="path-tabs reveal">
+        <button class="path-tab active" onclick="switchPath(0, this)">🤖 Automação</button>
+        <button class="path-tab" onclick="switchPath(1, this)">💬 Chatbots</button>
+        <button class="path-tab" onclick="switchPath(2, this)">📈 Tráfego Nichado</button>
+      </div>
+
+      <!-- PANEL 1 -->
+      <div class="path-panel active" id="panel-0">
+        <div class="path-card">
+          <div class="path-card-header">
+            <div>
+              <div class="path-card-title">Automação de Processos com IA</div>
+              <div class="path-card-sub">Crie fluxos automáticos que conectam sistemas — CRM, WhatsApp, planilhas, e-mail — usando IA para classificar, responder e organizar dados. Você elimina trabalho manual das empresas.</div>
+            </div>
+            <div class="path-ticket">
+              <div class="path-ticket-label">Ticket médio</div>
+              <div class="path-ticket-value">R$ 2k–15k<br/><small style="font-size:12px;color:rgba(255,255,255,0.4)">por projeto</small></div>
+            </div>
+          </div>
+          <div class="path-card-body">
+            <div class="path-why">
+              <strong>Por que funciona:</strong> Você não vende "marketing". Você vende <strong>tempo e redução de custo</strong> — métricas que qualquer empresário entende e mede. O ROI é imediato e mensurável.
+            </div>
+
+            <div class="path-learn">
+              <h4>O que estudar:</h4>
+              <div class="learn-items">
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Make (Integromat) e n8n</strong> — plataformas de automação visual, gratuitas para começar</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>APIs e Webhooks</strong> — conceito fundamental para conectar qualquer sistema</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>JSON</strong> — formato de dados universal entre ferramentas</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>OpenAI API / Gemini API</strong> — integrar IA para análise e geração de texto nos fluxos</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>WhatsApp API (Evolution API)</strong> — integrar comunicação empresarial</div></div>
+              </div>
+            </div>
+
+            <div class="plan-title">Plano de ação — 6 meses</div>
+            <div class="plan-rows">
+              <div class="plan-row">
+                <div><div class="plan-month">1</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Fundamentos</strong><br/>APIs, Webhooks, JSON. Criar conta no Make e n8n. Automatizar tarefas pessoais.</div>
+                <div class="plan-result">✓ Entender como sistemas se comunicam</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">2–3</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>IA na Automação</strong><br/>Conectar Make/n8n à API da OpenAI. Criar automação que lê e-mail e alerta no WhatsApp.</div>
+                <div class="plan-result">✓ Integrar IA em fluxos funcionais</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">4</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Casos Empresariais</strong><br/>Conectar CRMs (HubSpot, Pipefy). Estruturar fluxos robustos com gestão de erros.</div>
+                <div class="plan-result">✓ Automações prontas para ambientes reais</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">5–6</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Portfólio e Vendas</strong><br/>2–3 projetos para conhecidos. Documentar "antes/depois". Prospectar no LinkedIn.</div>
+                <div class="plan-result">✓ Primeiro case + captação ativa</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2 -->
+      <div class="path-panel" id="panel-1">
+        <div class="path-card">
+          <div class="path-card-header">
+            <div>
+              <div class="path-card-title">Chatbots Inteligentes para Negócios Locais</div>
+              <div class="path-card-sub">Bots que leem o catálogo, cardápio ou FAQ da empresa e atendem no WhatsApp 24h de forma natural. Nada de "Digite 1 para...".</div>
+            </div>
+            <div class="path-ticket">
+              <div class="path-ticket-label">Ticket médio</div>
+              <div class="path-ticket-value">R$ 3k–10k<br/><small style="font-size:12px;color:rgba(255,255,255,0.4)">setup + recorrência</small></div>
+            </div>
+          </div>
+          <div class="path-card-body">
+            <div class="path-why">
+              <strong>Por que funciona:</strong> Clínicas, imobiliárias e e-commerces <strong>perdem vendas todos os dias</strong> por demora no atendimento. Um bot bem feito resolve isso com custo fixo baixo — e o valor percebido é enorme.
+            </div>
+
+            <div class="path-learn">
+              <h4>O que estudar:</h4>
+              <div class="learn-items">
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Voiceflow ou Typebot</strong> — construtores visuais de fluxo de conversa</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>RAG (Retrieval-Augmented Generation)</strong> — fazer a IA consultar documentos da empresa sem inventar informações</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>OpenAI API / Gemini API</strong> — o "cérebro" do bot</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>WhatsApp API</strong> — Meta Cloud API (oficial) ou Evolution API (acessível para PMEs)</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>UX Conversacional</strong> — como desenhar fluxos naturais que não parecem robôs</div></div>
+              </div>
+            </div>
+
+            <div class="plan-title">Plano de ação — 6 meses</div>
+            <div class="plan-rows">
+              <div class="plan-row">
+                <div><div class="plan-month">1</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Design de Conversa</strong><br/>Estudar Voiceflow/Typebot. Criar bot de FAQ simples. Praticar fluxos naturais.</div>
+                <div class="plan-result">✓ Bot básico funcional sem parecer robô</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">2–3</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>IA e Base de Conhecimento</strong><br/>Conectar à API OpenAI. Implementar RAG com PDF real de empresa.</div>
+                <div class="plan-result">✓ Bot que responde com dados reais da empresa</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">4</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Conexão WhatsApp</strong><br/>Estudar Meta Cloud API e Evolution API. Publicar bot em número de teste.</div>
+                <div class="plan-result">✓ Bot rodando no canal principal do cliente</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">5–6</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Produto e Vendas</strong><br/>Escolher nicho (ex: clínicas). Gravar demo em vídeo. Oferecer 7 dias grátis.</div>
+                <div class="plan-result">✓ Primeiro cliente + portfólio visual</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3 -->
+      <div class="path-panel" id="panel-2">
+        <div class="path-card">
+          <div class="path-card-header">
+            <div>
+              <div class="path-card-title">Tráfego Pago Hiper-Nichado + IA</div>
+              <div class="path-card-sub">Especialista em trazer clientes para um nicho específico de alto valor — energia solar, clínicas de estética, arquitetos. A IA acelera a criação de anúncios e reduz o custo de produção.</div>
+            </div>
+            <div class="path-ticket">
+              <div class="path-ticket-label">Ticket médio</div>
+              <div class="path-ticket-value">R$ 2,5k–8k<br/><small style="font-size:12px;color:rgba(255,255,255,0.4)">por cliente/mês</small></div>
+            </div>
+          </div>
+          <div class="path-card-body">
+            <div class="path-why">
+              <strong>Por que funciona:</strong> Especialistas em nicho cobram o dobro de agências genéricas — e entregam resultado superior porque <strong>entendem profundamente as dores do público</strong>. A IA reduz 80% do tempo de produção de criativos.
+            </div>
+
+            <div class="path-learn">
+              <h4>O que estudar:</h4>
+              <div class="learn-items">
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Meta Ads (Facebook/Instagram)</strong> — estrutura de campanha, pixel, públicos personalizados</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Google Ads</strong> — rede de pesquisa, rastreamento de conversão</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Prompt Engineering para Copy</strong> — gerar textos persuasivos com ChatGPT/Gemini</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Canva com IA / Midjourney</strong> — criativos visuais 5x mais rápido que a concorrência</div></div>
+                <div class="learn-item"><div class="learn-dot"></div><div><strong>Landing Pages</strong> — WordPress + Elementor ou construtores nacionais (GreatPages)</div></div>
+              </div>
+            </div>
+
+            <div class="plan-title">Plano de ação — 6 meses</div>
+            <div class="plan-rows">
+              <div class="plan-row">
+                <div><div class="plan-month">1–2</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Motores de Anúncio</strong><br/>Estudo profundo de Meta e Google Ads. Subir campanhas de R$ 10/dia para aprender.</div>
+                <div class="plan-result">✓ Domínio das plataformas e rastreamento</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">3</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>IA na Criação</strong><br/>ChatGPT para copy. Canva/Midjourney para criativos. Testar 5+ variações.</div>
+                <div class="plan-result">✓ Produção de criativos 5x mais rápida</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">4</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Landing Pages</strong><br/>Criar páginas de captura focadas em conversão. Montar funil completo.</div>
+                <div class="plan-result">✓ Funis de conversão funcionais</div>
+              </div>
+              <div class="plan-row">
+                <div><div class="plan-month">5–6</div><div class="plan-month-sub">mês</div></div>
+                <div class="plan-action"><strong>Nicho e Captação</strong><br/>Definir nicho rentável. Campanha "isca". Cobrar só o investimento no primeiro mês.</div>
+                <div class="plan-result">✓ Primeiro case com leads documentados</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. REGRA DOS 6 MESES -->
+  <section class="section rule-bg">
+    <div class="section-inner">
+      <div class="section-label reveal">Seção 04</div>
+      <h2 class="section-title reveal">A Regra dos 6 Meses</h2>
+      <p class="section-body reveal" style="color:rgba(255,255,255,0.55);">
+        Para transformar a paralisia em progresso real. Não é motivacional — é operacional.
+      </p>
+
+      <div class="rule-steps">
+        <div class="rule-step reveal">
+          <div class="rule-step-num">01</div>
+          <div class="rule-step-content">
+            <h4>Escolha apenas UM caminho</h4>
+            <p>A maior armadilha é tentar abraçar tudo. Leia os três caminhos deste guia, escolha o que mais combina com você — e feche o resto. A escolha errada executada é melhor que a escolha certa que nunca sai do papel.</p>
+          </div>
+        </div>
+        <div class="rule-step reveal">
+          <div class="rule-step-num">02</div>
+          <div class="rule-step-content">
+            <h4>Feche os olhos para o resto</h4>
+            <p>Cancele inscrições em canais que falam de outros nichos. Desative notificações de "oportunidades". O FOMO é o maior inimigo de quem está começando. Você não pode aprender tudo — mas pode dominar uma coisa.</p>
+          </div>
+        </div>
+        <div class="rule-step reveal">
+          <div class="rule-step-num">03</div>
+          <div class="rule-step-content">
+            <h4>Regra 20/80 — Estudo e Prática</h4>
+            <p>20% do tempo em tutoriais e teoria. 80% construindo coisas reais — mesmo imperfeitas. O aprendizado verdadeiro acontece no erro, não no vídeo. Parar de consumir para começar a construir é o maior salto.</p>
+          </div>
+        </div>
+        <div class="rule-step reveal">
+          <div class="rule-step-num">04</div>
+          <div class="rule-step-content">
+            <h4>O primeiro cliente é o mais importante</h4>
+            <p>Não espere estar "pronto". Ofereça o primeiro projeto de graça ou a custo para um conhecido que tenha empresa. Isso gera: case de sucesso, feedback real e confiança para cobrar nos próximos. Perfeição é inimiga do progresso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PERSPECTIVAS POR CAMINHO -->
+  <section class="section msg-bg">
+    <div class="section-inner">
+      <div class="section-label reveal">Seção 05</div>
+      <h2 class="section-title reveal">Uma perspectiva por caminho</h2>
+      <p class="section-body reveal" style="margin-bottom:32px;">
+        Você já leu o guia completo. Agora veja como enquadrar cada caminho em poucas linhas — seja pra organizar o seu próprio pensamento, ou pra explicar pra alguém próximo que está na mesma situação.
+      </p>
+
+      <div class="msg-tabs reveal">
+        <button class="msg-tab active" onclick="switchMsg(0, this)">Introdução Universal</button>
+        <button class="msg-tab" onclick="switchMsg(1, this)">Para Automação</button>
+        <button class="msg-tab" onclick="switchMsg(2, this)">Para Chatbots</button>
+        <button class="msg-tab" onclick="switchMsg(3, this)">Para Tráfego</button>
+      </div>
+
+      <div class="msg-panel active" id="msg-0">
+        <p class="msg-intro">O ponto de partida — antes de escolher qualquer caminho:</p>
+        <div class="msg-bubble" id="mbody-0">
+Fala, cara. Entendi seu áudio. O que você está sentindo é totalmente normal — o mercado digital é barulhento e vende muita ilusão.
+
+A maioria dos caminhos populares já está saturado. O que realmente está crescendo agora é resolver problemas de empresas usando tecnologia.
+
+Separei um material de 6 meses focado no que tem mais demanda real. Dá uma olhada 👇
+        </div>
+        <button class="copy-btn" onclick="copyMsg('mbody-0', this)">⎘ Copiar mensagem</button>
+      </div>
+
+      <div class="msg-panel" id="msg-1">
+        <p class="msg-intro">Como enquadrar o Caminho 1 — Automação:</p>
+        <div class="msg-bubble" id="mbody-1">
+Esquece a ideia de agência genérica. O que dá retorno hoje é vender tempo e redução de custo para empresas.
+
+Quem aprende a automatizar processos com ferramentas como Make e n8n integrado a IA virou profissional escasso e bem pago. Ticket médio de R$ 2k a R$ 15k por projeto.
+
+Em 6 meses estudando sério dá para começar a prestar serviço para empresas. Mandei o guia completo — tem o plano mês a mês.
+        </div>
+        <button class="copy-btn" onclick="copyMsg('mbody-1', this)">⎘ Copiar mensagem</button>
+      </div>
+
+      <div class="msg-panel" id="msg-2">
+        <p class="msg-intro">Como enquadrar o Caminho 2 — Chatbots:</p>
+        <div class="msg-bubble" id="mbody-2">
+Aquele negócio de agente de IA que você falou — vai nessa direção.
+
+Mas não são robôs de menu. São bots que leem o catálogo da empresa e atendem no WhatsApp 24h de forma natural. Clínicas e imobiliárias pagam bem por isso porque perdem venda todo dia por falta de resposta rápida.
+
+Tem o caminho completo no guia que mandei. Plano de 6 meses direto ao ponto.
+        </div>
+        <button class="copy-btn" onclick="copyMsg('mbody-2', this)">⎘ Copiar mensagem</button>
+      </div>
+
+      <div class="msg-panel" id="msg-3">
+        <p class="msg-intro">Como enquadrar o Caminho 3 — Tráfego Nichado:</p>
+        <div class="msg-bubble" id="mbody-3">
+Agência genérica tá morta. Mas especialista em trazer cliente para um nicho específico — energia solar, clínica estética, dentista — cobra o triplo e entrega resultado.
+
+Com IA você produz os anúncios em 1/5 do tempo da concorrência. Essa é a borda competitiva real.
+
+Tem o roteiro de 6 meses no guia. Vai lá.
+        </div>
+        <button class="copy-btn" onclick="copyMsg('mbody-3', this)">⎘ Copiar mensagem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONCLUSÃO -->
+  <section class="section conclusion-bg">
+    <div class="section-inner" style="text-align:center;">
+      <div class="section-label reveal" style="justify-content:center;">Conclusão</div>
+      <h2 class="section-title reveal">O que realmente importa</h2>
+
+      <div class="vs-block reveal">
+        <div class="vs-card wrong">❌ "Quero ganhar dinheiro no digital"</div>
+        <div class="vs-divider">vs</div>
+        <div class="vs-card right">✅ "Quero resolver problemas de empresas usando tecnologia"</div>
+      </div>
+
+      <p class="conclusion-quote reveal">
+        "Quando você resolve um problema real,<br/>
+        <span>o dinheiro vem como consequência</span><br/>— não como objetivo."
+      </p>
+
+      <p class="reveal" style="color:rgba(255,255,255,0.5); font-size:15px; max-width:540px; margin:0 auto 48px; line-height:1.8;">
+        O mercado digital com IA não é moda. É uma transformação estrutural que vai durar pelo menos a próxima década. Escolha um caminho. Vá fundo. Construa algo real.
+      </p>
+
+      <div class="reveal" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://sutari.com.br" target="_blank" style="
+          background: var(--amber); color: var(--navy);
+          font-weight: 700; font-size: 14px;
+          padding: 14px 28px; border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.2s;
+          display: inline-block;
+        ">Conheça a Sutari Intelligence →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#guide-content -->
+
+<footer>
+  <p>© Sutari Intelligence Ltda · <a href="https://sutari.com.br">sutari.com.br</a> · Todos os direitos reservados</p>
+  <p style="margin-top:8px;">Baseado em: Upwork In-Demand Skills Report 2026 · Gartner AI Forecast 2025 · Brookings Institution</p>
+</footer>
+
+<script>
+  // ─── PATH IDENTIFIER ───
+  function selectPath(idx, card) {
+    document.querySelectorAll('.path-ident-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.path-ident-reveal').forEach(p => p.classList.remove('show'));
+    card.classList.add('selected');
+    document.getElementById('pir-' + idx).classList.add('show');
+    document.getElementById('scroll-cta').style.display = 'block';
+  }
+
+  // ─── INIT ───
+  document.addEventListener('DOMContentLoaded', initObserver);
+
+  // ─── SCROLL REVEAL ───
+  function initObserver() {
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  // ─── PATH TABS ───
+  function switchPath(idx, btn) {
+    document.querySelectorAll('.path-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.path-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + idx).classList.add('active');
+  }
+
+  // ─── MSG TABS ───
+  function switchMsg(idx, btn) {
+    document.querySelectorAll('.msg-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.msg-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('msg-' + idx).classList.add('active');
+  }
+
+  // ─── COPY ───
+  function copyMsg(id, btn) {
+    const text = document.getElementById(id).innerText.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '⎘ Copiar mensagem';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
