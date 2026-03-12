@@ -20,13 +20,13 @@ A página foi construída em um único arquivo (Single File) priorizando velocid
 O projeto é puramente estático (`.html`). Nenhum build ou instalação de dependências são necessários.
 
 1. Clone o repositório ou baixe o arquivo fonte.
-2. Dê um duplo clique em `guia-carreira-ia.html` para abri-lo e interagir diretamente em seu navegador padrão.
+2. Dê um duplo clique em `index.html` para abri-lo e interagir diretamente em seu navegador padrão.
 
 *Dica para desenvolvedores:* Para uma melhor experiência de desenvolvimento com live-reload, recomenda-se abrir a pasta do projeto no VS Code e utilizar a extensão **Live Server**, ou executar rodar algum servidor HTTP estático (ex: `npx serve .`).
 
 ## 📁 Estrutura do Arquivo
 
-O arquivo `guia-carreira-ia.html` concentra tudo o que é necessário para a página rodar:
+O arquivo `index.html` concentra tudo o que é necessário para a página rodar:
 - **Nav/Hero:** Cabeçalho, Copy principal e o Gate Form de captação de lead.
 - **Diagnosis:** Seção para identificar qual perfil e paralisação atual o usuário se encontra.
 - **Market Data:** Paralelos do mercado, salários base e níveis de senioridade vs demanda.
